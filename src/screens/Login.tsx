@@ -1,8 +1,10 @@
 import onboarding from '../assets/onboarding1.svg'
 import Password from '../assets/Password.svg'
 import Google from '../assets/Google.svg'
+import { useNavigate } from 'react-router-dom'
 
 const Login = () => {
+  const navigate = useNavigate();
   const changeVisibility = () => {
     const password = document.getElementById('password') as HTMLInputElement
     if (password.type === 'password') {
@@ -45,7 +47,7 @@ const Login = () => {
         </div>
         <div className='flex justify-center items-center gap-[2px] mt-8'>
           <p className='text-black text-sm font-medium'>Don't have an account?</p>
-          <p className='text-[#FE8C00] text-sm font-semibold'>Register</p>
+          <p onClick={()=>navigate("/register")} className='text-[#FE8C00] text-sm font-semibold cursor-pointer'>Register</p>
         </div>
       </div>
     </div>

@@ -1,0 +1,200 @@
+.postlogin {
+  height: 100vh;
+  max-height: 100vh;
+  overflow-y: hidden !important;
+}
+
+.drawer {
+  border-radius: 24px 24px 0 0;
+  padding: 0 30px 45px 30px;
+  /* transition: transform 0.3s ease-in-out; */
+  transform: translateY(0);
+  position: fixed;
+  animation: slideIn 1.5s ease-in-out;
+  overflow-y: hidden;
+}
+
+.indicator {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.spinanimation {
+  animation: spin 4s linear infinite;
+}
+
+.iconbackground {
+  background-color: rgba(254, 140, 0, 0.1);
+}
+
+.vector1 {
+  animation: vector1 1.5s ease-in-out;
+  transform: translateY(-70px) translateX(80px);
+}
+
+.vector2 {
+  animation: vector2 1.5s ease-in-out;
+  transform: translateX(90px) translateY(30px);
+}
+
+.vector3 {
+  animation: vector3 1.5s ease-in-out;
+  transform: translateY(-88px) translateX(-55px);
+}
+
+.vector4 {
+  animation: vector4 1.5s ease-in-out;
+  transform: translateY(-100px) translateX(0px);
+}
+
+.vector5 {
+  animation: vector5 1.5s ease-in-out;
+  transform: translateY(22px) translateX(-75px);
+}
+
+.vector6 {
+    animation: vector6 1.5s ease-in-out;
+    transform: translateY(-15px) translateX(-95px);
+}
+
+.vector7 {
+    animation: vector7 1.5s ease-in-out;
+    transform: translateY(-90px) translateX(45px);
+}
+
+.vector8 {
+    animation: vector8 1.5s ease-in-out;
+    transform: translateY(-10px) translateX(85px);
+}
+
+.vector9 {
+    animation: vector9 1.5s ease-in-out;
+    transform: translateY(-88px) translateX(10px);
+}
+
+.vector10 {
+    animation: vector10 1.5s ease-in-out;
+    transform: translateY(-27px) translateX(75px);
+}
+
+.vector11 {
+    animation: vector11 1.5s ease-in-out;
+    transform: translateY(-45px) translateX(-75px);
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(100%);
+    display: none;
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes vector1 {
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    transform: translateY(-70px) translateX(80px);
+  }
+}
+
+@keyframes vector2 {
+  from {
+    transform: translateX(0) translateY(0);
+  }
+  to {
+    transform: translateX(90px) translateY(30px);
+  }
+}
+
+@keyframes vector3 {
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    transform: translateY(-88px) translateX(-55px);
+  }
+}
+
+@keyframes vector4 {
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    transform: translateY(-100px) translateX(0px);
+  }
+}
+
+@keyframes vector5 {
+  from {
+    transform: translateY(0) translateX(0);
+  }
+  to {
+    transform: translateY(22px) translateX(-75px);
+  }
+}
+
+@keyframes vector6 {
+    from {
+        transform: translateY(0) translateX(0);
+    }
+    to {
+        transform: translateY(-15px) translateX(-95px);
+    }
+}
+
+@keyframes vector7 {
+    from {
+        transform: translateY(0) translateX(0);
+    }
+    to {
+        transform: translateY(-90px) translateX(45px);
+    }
+}
+
+@keyframes vector8 {
+    from {
+        transform: translateY(0) translateX(0);
+    }
+    to {
+        transform: translateY(-10px) translateX(85px);
+    }
+}
+
+@keyframes vector9 {
+    from {
+        transform: translateY(0) translateX(0);
+    }
+    to {
+        transform: translateY(-88px) translateX(10px);
+    }
+}
+
+@keyframes vector10 {
+    from {
+        transform: translateY(0) translateX(0);
+    }
+    to {
+        transform: translateY(-27px) translateX(75px);
+    }
+}
+
+@keyframes vector11 {
+    from {
+        transform: translateY(0) translateX(0);
+    }
+    to {
+        transform: translateY(-45px) translateX(-75px);
+    }
+}
