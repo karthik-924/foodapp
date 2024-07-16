@@ -55,7 +55,7 @@ const Login = () => {
       console.log(val)
       if (val) {
         localStorage.setItem('uid', val)
-        navigate('/postlogin')
+        window.location.href = '/postlogin'
       } else {
         alert('Invalid Credentials')
       }
@@ -66,7 +66,7 @@ const Login = () => {
     const val = await loginwithGoogle()
     if (val) {
       localStorage.setItem('uid', val)
-      navigate('/postlogin')
+      window.location.href = '/postlogin'
     } else {
       alert('Invalid Credentials')
     }

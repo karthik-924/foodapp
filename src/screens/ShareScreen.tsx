@@ -41,7 +41,7 @@ const ShareScreen = () => {
     return (
         <div className='font-inter max-sm:hidden' style={{ backgroundImage: `url(${onboarding})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
             <div className='bg-white max-sm:w-screen max-sm:h-screen max-sm:rounded-none rounded-[48px] px-20 py-12 max-sm:px-0 max-sm:py-0 flex flex-col justify-center'>
-                <div className=' transition-all duration-5000 bg-gray-100 mb-5 w-[400px] max-sm:w-full' style={{ opacity: 1 }}>
+                <div className=' transition-all duration-5000 bg-[#FE8C00] rounded-[48px] p-4 text-white mb-5 w-[500px] max-sm:w-full' style={{ opacity: 1 }}>
                     <p className='text-xs font-semibold text-center'>{quote}</p>
                 </div>
                 <div className='flex justify-center items-center mb-8'>
