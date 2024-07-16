@@ -5,6 +5,7 @@ import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithP
 
 export const register = async (username:string,email: string, password: string) => {
     try {
+        console.log(username);
         const userCredential = await createUserWithEmailAndPassword(auth, email, password);
         // console.log(userCredential);
         if (userCredential) return userCredential.user.uid;
