@@ -34,29 +34,37 @@ const Tracking = () => {
   }
 
   useEffect(() => {
-    fetch("https://api.api-ninjas.com/v1/quotes")
-      .then(res => res.json())
-      .then(data => {
-        setQuote(data.quote);
-      }
-      );
+    const fetchQuote = () => {
+      fetch("https://api.api-ninjas.com/v1/quotes", {
+        headers: {
+          'X-Api-Key': import.meta.env.VITE_QUOTE_API_KEY as string,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data && data.length > 0) {
+            setQuote(data[0].quote);
+          }
+        })
+        .catch((error) => console.error("Error fetching quote:", error));
+    };
+
+    fetchQuote();
+
     const interval = setInterval(() => {
-      fetch("https://api.api-ninjas.com/v1/quotes")
-        .then(res => res.json())
-        .then(data => {
-          setQuote(data.quote);
-        }
-        );
+      fetchQuote();
     }, 5000);
+
     return () => clearInterval(interval);
   }, []);
 
 
   return (
-    <div className='font-inter max-sm:hidden' style={{ backgroundImage: `url(${onboarding})`, backgroundSize: 'cover', backgroundPosition: 'center', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+    <div className='font-inter max-sm:hidden' style={{ backgroundImage: `url(${onboarding})`, backgroundSize: 'cover', backgroundPosition: 'center', height: 'fit-content',minHeight:'100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <div className='bg-white max-sm:w-screen max-sm:h-screen max-sm:rounded-none rounded-[48px] px-20 py-12 max-sm:px-0 max-sm:py-0 flex flex-col justify-center'>
-        <div className=' transition-all opacity-0 duration-5000' style={{ opacity: 1 }}>
-          <p className='text-2xl font-semibold text-center'>{quote}</p>
+        <div className=' transition-all duration-5000 bg-gray-100 mb-5 w-[400px] max-sm:w-full' style={{ opacity: 1 }}>
+          <p className='text-xs font-semibold text-center'>{quote}</p>
         </div>
         <div className='flex justify-center items-center mb-8'>
           <Clock speed={speed} time={startTime} />

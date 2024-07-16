@@ -55,3 +55,9 @@ input[type="range"]::-moz-range-thumb {
   background: #ffffff;
   cursor: pointer;
 }
+
+.quote{
+  transition: all 0.3s;
+  opacity: 1;
+  
+}

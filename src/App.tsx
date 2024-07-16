@@ -15,14 +15,10 @@ function App() {
       <Routes>
         <Route path="/" element={<OnBoarding />} />
         <Route path="/login" element={
-          <Auth>
             <Login />
-          </Auth>
         } />
         <Route path="/register" element={
-          <Auth>
             <Register />
-          </Auth>
         } />
         <Route path="/postlogin" element={
           <Auth>
