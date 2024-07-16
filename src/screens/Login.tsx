@@ -90,7 +90,7 @@ const Login = () => {
           <p className='text-[#878787] text-sm font-medium bg-white px-2 text-nowrap'>Or sign in with</p>
           <hr className='w-full border-0 border-[#878787] border-t-[0.5px]' />
         </div>
-        <div onClick={()=>handleGoogleLogin()} className='flex justify-center items-center gap-4 mt-6'>
+        <div onClick={()=>handleGoogleLogin()} className='flex justify-center cursor-pointer items-center gap-4 mt-6'>
           <img src={Google} alt='google' />
         </div>
         <div className='flex justify-center items-center gap-[2px] mt-8'>
