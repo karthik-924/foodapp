@@ -11,7 +11,7 @@ const app = initializeApp(firebaseconfig);
 const auth = getAuth(app);
 auth.useDeviceLanguage();
 setPersistence(auth, browserLocalPersistence).then(() => {
-  console.log("Local persistence set")
+  // console.log("Local persistence set")
 })
 
 export { app, auth };

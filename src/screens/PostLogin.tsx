@@ -20,6 +20,7 @@ const PostLogin = () => {
   const navigate = useNavigate();
   const Logout = async() => {
     const val = await logout()
+    console.log(val)
     if (val) {
       navigate('/login')
     }

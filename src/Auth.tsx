@@ -8,7 +8,8 @@ const Auth = ({ children }: { children: ReactNode }) => {
 
     useEffect(() => {
         const uid = localStorage.getItem('uid');
-        if (!uid) {
+        // console.log(uid);
+        if (uid===undefined || uid===null) {
             navigate('/login');
         }
     }, [navigate]);

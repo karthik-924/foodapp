@@ -14,16 +14,14 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<OnBoarding />} />
-        <Route path="/login" element={
-            <Login />
-        } />
+        <Route path="/login" element={<Login />} />
         <Route path="/register" element={
-            <Register />
+          <Register />
         } />
         <Route path="/postlogin" element={
-          <Auth>
+          // <Auth>
             <PostLogin />
-          </Auth>
+          // </Auth>
         } />
         <Route path='/tracking' element={
           <Auth>

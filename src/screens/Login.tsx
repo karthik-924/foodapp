@@ -3,7 +3,9 @@ import Password from '../assets/Password.svg'
 import Google from '../assets/Google.svg'
 import { useNavigate } from 'react-router-dom'
 import { loginwithEmail, loginwithGoogle } from '../authstorage/authentication'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { onAuthStateChanged } from 'firebase/auth'
+import { auth } from '../authstorage/firebaseinit'
 
 const Login = () => {
   const navigate = useNavigate();
@@ -27,6 +29,15 @@ const Login = () => {
       [e.target.id]: e.target.value
     })
   }
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (user) {
+        navigate('/postlogin');
+      }
+    });
+
+    return () => unsubscribe();
+  }, [navigate]);
 
   const handleLogin = async () => {
     const { email, password } = form
@@ -42,6 +53,7 @@ const Login = () => {
     }
     if (email && password) {
       const val = await loginwithEmail(email, password)
+      console.log(val)
       if (val) {
         localStorage.setItem('uid', val)
         navigate('/postlogin')
