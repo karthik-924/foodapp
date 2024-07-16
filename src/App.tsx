@@ -5,7 +5,7 @@ import Login from './screens/Login'
 import Register from './screens/Register'
 import PostLogin from './screens/PostLogin'
 import Tracking from './screens/Tracking'
-import Auth from './Auth'
+// import Auth from './Auth'
 import ShareScreen from './screens/ShareScreen'
 
 function App() {
@@ -24,9 +24,9 @@ function App() {
           // </Auth>
         } />
         <Route path='/tracking' element={
-          <Auth>
+          // <Auth>
             <Tracking />
-          </Auth>
+          // </Auth>
         } />
         <Route path='/share' element={
           <ShareScreen />

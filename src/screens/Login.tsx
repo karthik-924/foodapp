@@ -3,9 +3,8 @@ import Password from '../assets/Password.svg'
 import Google from '../assets/Google.svg'
 import { useNavigate } from 'react-router-dom'
 import { loginwithEmail, loginwithGoogle } from '../authstorage/authentication'
-import { useEffect, useState } from 'react'
-import { onAuthStateChanged } from 'firebase/auth'
-import { auth } from '../authstorage/firebaseinit'
+import { useState } from 'react'
+
 
 const Login = () => {
   const navigate = useNavigate();
@@ -29,15 +28,15 @@ const Login = () => {
       [e.target.id]: e.target.value
     })
   }
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        navigate('/postlogin');
-      }
-    });
+  // useEffect(() => {
+  //   const unsubscribe = onAuthStateChanged(auth, (user) => {
+  //     if (user) {
+  //       navigate('/postlogin');
+  //     }
+  //   });
 
-    return () => unsubscribe();
-  }, [navigate]);
+  //   return () => unsubscribe();
+  // }, [navigate]);
 
   const handleLogin = async () => {
     const { email, password } = form
