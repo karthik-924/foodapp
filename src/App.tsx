@@ -5,6 +5,8 @@ import Login from './screens/Login'
 import Register from './screens/Register'
 import PostLogin from './screens/PostLogin'
 import Tracking from './screens/Tracking'
+import Auth from './Auth'
+import ShareScreen from './screens/ShareScreen'
 
 function App() {
 
@@ -12,10 +14,29 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<OnBoarding />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/postlogin" element={<PostLogin />} />
-        <Route path='/tracking' element={<Tracking />} />
+        <Route path="/login" element={
+          <Auth>
+            <Login />
+          </Auth>
+        } />
+        <Route path="/register" element={
+          <Auth>
+            <Register />
+          </Auth>
+        } />
+        <Route path="/postlogin" element={
+          <Auth>
+            <PostLogin />
+          </Auth>
+        } />
+        <Route path='/tracking' element={
+          <Auth>
+            <Tracking />
+          </Auth>
+        } />
+        <Route path='/share' element={
+          <ShareScreen />
+        } />
       </Routes>
     </Router>
   )

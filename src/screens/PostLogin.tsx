@@ -13,8 +13,17 @@ import vector8 from '../assets/vector8.svg'
 import vector9 from '../assets/vector9.svg'
 import vector10 from '../assets/vector10.svg'
 import vector11 from '../assets/vector11.svg'
+import { useNavigate } from 'react-router-dom'
+import { logout } from '../authstorage/authentication'
 
 const PostLogin = () => {
+  const navigate = useNavigate();
+  const Logout = async() => {
+    const val = await logout()
+    if (val) {
+      navigate('/login')
+    }
+  }
   return (
     <div className='font-inter postlogin' style={{ backgroundImage: `url(${onboarding})`, backgroundSize: 'cover', backgroundPosition: 'center', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <div className='bottom-0 bg-white w-[500px] flex flex-col justify-center items-center max-sm:w-full drawer'>
@@ -41,8 +50,8 @@ const PostLogin = () => {
         <div className='flex w-full justify-center items-center'>
           <p className='text-2xl font-semibold text-center'>Login Successful</p>
         </div>
-        <button className='bg-[#FE8C00] mt-8 rounded-[100px] active:scale-[0.98] text-white h-[52px] text-sm w-full font-semibold'>Go to Tracking Screen</button>
-        <p className='text-[#878787] text-sm mt-6 text-center cursor-pointer hover:underline'>Logout</p>
+        <button onClick={()=>navigate("/tracking")} className='bg-[#FE8C00] mt-8 rounded-[100px] active:scale-[0.98] text-white h-[52px] text-sm w-full font-semibold'>Go to Tracking Screen</button>
+        <p onClick={()=>Logout()} className='text-[#878787] text-sm mt-6 text-center cursor-pointer hover:underline'>Logout</p>
       </div>
     </div>
   )
