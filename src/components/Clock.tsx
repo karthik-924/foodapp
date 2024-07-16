@@ -8,9 +8,9 @@ type Props = {
 
 const Clock = ({ speed, time }: Props) => {
     const adjustedTime = new Date(time);
-    console.log(adjustedTime);
+    // console.log(adjustedTime);
     adjustedTime.setHours(adjustedTime.getHours() + 2);
-    console.log(adjustedTime);
+    // console.log(adjustedTime);
     const initialHourAngle = (adjustedTime.getHours() % 12) * 30 + (adjustedTime.getMinutes() / 60) * 30;
     const initialMinuteAngle = adjustedTime.getMinutes() * 6 + (adjustedTime.getSeconds() / 60) * 6;
     const initialSecondAngle = adjustedTime.getSeconds() * 6;

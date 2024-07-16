@@ -12,7 +12,7 @@ const Tracking = () => {
   const startTime = new Date();
   const navigate = useNavigate();
   const handleShare = () => {
-    console.log(startTime, new Date());
+    // console.log(startTime, new Date());
     const getCurrentTimeShownOnClock = (startTime: Date) => {
       const currentTime = new Date();
       const elapsedTime = (currentTime.getTime() - startTime.getTime());
@@ -42,7 +42,7 @@ const Tracking = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          // console.log(data);
           if (data && data.length > 0) {
             setQuote(data[0].quote);
           }
@@ -63,7 +63,7 @@ const Tracking = () => {
   return (
     <div className='font-inter max-sm:hidden' style={{ backgroundImage: `url(${onboarding})`, backgroundSize: 'cover', backgroundPosition: 'center', height: 'fit-content',minHeight:'100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
       <div className='bg-white max-sm:w-screen max-sm:h-screen max-sm:rounded-none rounded-[48px] px-20 py-12 max-sm:px-0 max-sm:py-0 flex flex-col justify-center'>
-        <div className=' transition-all duration-5000 bg-gray-100 mb-5 w-[400px] max-sm:w-full' style={{ opacity: 1 }}>
+        <div className=' transition-all duration-5000 bg-[#FE8C00] rounded-[48px] p-4 text-white mb-5 w-[500px] max-sm:w-full' style={{ opacity: 1 }}>
           <p className='text-xs font-semibold text-center'>{quote}</p>
         </div>
         <div className='flex justify-center items-center mb-8'>
